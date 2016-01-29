@@ -51,7 +51,7 @@ import java.util.regex.Pattern;
  *
  * @author dswitkin@google.com (Daniel Switkin)
  */
-public final class EncodeActivity extends Activity {
+public class EncodeActivity extends Activity {
 
   private static final String TAG = EncodeActivity.class.getSimpleName();
 
@@ -60,6 +60,7 @@ public final class EncodeActivity extends Activity {
   private static final String USE_VCARD_KEY = "USE_VCARD";
 
   private QRCodeEncoder qrCodeEncoder;
+  private TextView titleView;
 
   private static FakeR fakeR;
   @Override
@@ -73,10 +74,17 @@ public final class EncodeActivity extends Activity {
 //      String action = intent.getAction();
 //      if (Intents.Encode.ACTION.equals(action) || Intent.ACTION_SEND.equals(action)) {
         setContentView(fakeR.getId("layout", "encode"));
+
+//       titleView = (TextView) findViewById(R.id.title_bar);
 //      } else {
 //        finish();
 //      }
     }
+  }
+
+
+  public TextView getTitleView(){
+    return  titleView;
   }
 
   @Override
@@ -214,8 +222,11 @@ public final class EncodeActivity extends Activity {
       view.setImageBitmap(bitmap);
 
       TextView contents = (TextView) findViewById(fakeR.getId("id", "contents_text_view"));
+
+      titleView = (TextView) findViewById(fakeR.getId("id", "title_bar"));
       if (intent.getBooleanExtra(Intents.Encode.SHOW_CONTENTS, true)) {
         contents.setText(qrCodeEncoder.getDisplayContents());
+        contents.setText("");
         setTitle(qrCodeEncoder.getTitle());
       } else {
         contents.setText("");
