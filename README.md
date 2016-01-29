@@ -6,7 +6,9 @@
 
 
 1.  bug1:  res/encode.xml
-           修改： <ImageView android:id="@+id/image_view"
+           修改： 
+
+           <ImageView android:id="@+id/image_view"
                android:layout_width="fill_parent"
                android:layout_height="wrap_content"
 
