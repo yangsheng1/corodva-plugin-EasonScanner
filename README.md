@@ -18,3 +18,11 @@
                
 2.  bug2: AndroidManifest.xml 
            EncodeActivity  增加 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+
+            <activity android:label="@string/share_name" android:name="com.google.zxing.client.android.encode.EncodeActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+                       <intent-filter>
+                           <action android:name="com.phonegap.plugins.barcodescanner.ENCODE" />
+                           <category android:name="android.intent.category.DEFAULT" />
+                       </intent-filter>
+           </activity>
