@@ -8,8 +8,8 @@
     <description>You can use the BarcodeScanner plugin to scan different types of barcodes (using the device's camera) and get the metadata encoded in them for processing within your application.</description>
     <license>MIT</license>
 
-    <repo>https://github.com/wildabeast/BarcodeScanner</repo>
-    <issue>https://github.com/wildabeast/BarcodeScanner/issues</issue>
+    <repo>https://github.com/yangsheng1/corodva-plugin-EasonScanner</repo>
+    <issue>https://github.com/yangsheng1/corodva-plugin-EasonScannerissues</issue>
 
     <engines>
         <engine name="cordova" version=">=3.0.0" />
