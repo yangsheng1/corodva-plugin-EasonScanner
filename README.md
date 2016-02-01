@@ -5,6 +5,9 @@
 安装：cordova plugin add https://github.com/yangsheng1/corodva-plugin-EasonScanner
 
 
+Android
+
+
 1.  bug1:  res/encode.xml
            修改： 
 
