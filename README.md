@@ -5,8 +5,6 @@
 安装：cordova plugin add https://github.com/yangsheng1/corodva-plugin-EasonScanner
 
 
-Android
-
 
 1.  bug1:  res/encode.xml
            修改： 
@@ -29,3 +27,33 @@ Android
                            <category android:name="android.intent.category.DEFAULT" />
                        </intent-filter>
            </activity>
+
+#Use
+
+Scan  
+
+    cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+      }, 
+      function (error) {
+          alert("Scanning failed: " + error);
+      }
+   );
+
+Encode
+
+
+
+     cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, "http://fir.im/itms",                                                          function(success) {
+                                          document.getElementById(id).src = success.file;    //IOS 需自行展示；
+                                        }, function(fail) {
+                                          alert("encoding failed: " + fail);
+                                        }
+     );
+     
+     
+   注意：  Android plugin 返回EncodeActivity展示，IOS  返回jpeg图片+路径，需自行通过img 展示；
