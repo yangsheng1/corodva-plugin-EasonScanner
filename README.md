@@ -28,7 +28,7 @@
                        </intent-filter>
            </activity>
 
-#Use
+#How to Use ?
 
 Scan  
 
