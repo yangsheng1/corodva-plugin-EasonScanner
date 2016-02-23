@@ -48,7 +48,7 @@ Encode
 
 
 
-     cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, "http://fir.im/itms",                                                          function(success) {
+     cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, "http://fir.im/itms",                                                              function(success) {
                                           document.getElementById(id).src = success.file;    //IOS 需自行展示；
                                         }, function(fail) {
                                           alert("encoding failed: " + fail);
