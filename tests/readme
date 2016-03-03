@@ -1,0 +1,18 @@
+ /* save image to file */
+    NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    NSString *date =  [formatter stringFromDate:[NSDate date]];
+    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%@", date];
+    NSString* filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@""];
+    NSString* str = @".jpeg";
+    
+    NSString* str4=[filePath stringByAppendingString:timeLocal];
+    NSString* path=[str4 stringByAppendingString:str];
+    [UIImageJPEGRepresentation(qrImage, 1.0) writeToFile:path atomically:YES];
+    
+    /* return file path back to cordova */
+    [self.plugin returnImage:path format:@"QR_CODE" callback: self.callback];
+
+
+
+IOS  缓存图片
